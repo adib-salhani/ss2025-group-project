@@ -1,0 +1,8 @@
+
+.idea/**
+/scripts/yolov8n.pt
+runs/**
+ultralytics/**
+
+datasets-downloaded/**
+/datasets-downloaded
