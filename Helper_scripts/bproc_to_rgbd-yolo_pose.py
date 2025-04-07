@@ -8,9 +8,20 @@ import numpy as np
 
 from tqdm import tqdm
 
-INPUT_PATH = "../bproc_output/NanoVise_new"
-OUTPUT_PATH = "../datasets/rgbd_pose/NanoVise"
-TEST_PATH = "../datasets/rgbd_pose-test/NanoVise"
+import sys,os
+from pathlib import Path
+
+root_dir = Path(__file__).parent.parent
+
+# INPUT_PATH = "../bproc_output/NanoVise_new"
+INPUT_PATH = os.path.join(root_dir,"datasets-downloaded")
+
+# OUTPUT_PATH = "../datasets/rgbd_pose/NanoVise"
+OUTPUT_PATH = os.path.join(root_dir,  "datasets", "rgbd_pose", "NanoVise")
+
+# TEST_PATH = "../datasets/rgbd_pose-test/NanoVise"
+TEST_PATH = os.path.join(root_dir,  "rgbd_pose-test", "NanoVise")
+
 INCLUSION_LIST = ["scene_", "Camera_", "Images", ".png"]
 
 # Number of keypoint on each object
@@ -225,6 +236,7 @@ for elem_idx in random_training_elements_indices:
 indices = [i for i in indices if i not in random_training_elements_indices]
 
 # Save train elements
+# asalhani: this step generate 6997 files. Takes almost 30 min.
 save_elements(train_elements, OUTPUT_PATH, "train")
 
 # Get random indexes from the remaining files
@@ -239,7 +251,8 @@ for elem_idx in random_val_elements_indices:
 indices = [i for i in indices if i not in random_val_elements_indices]
 
 # Save validation elements
-save_elements(val_elements, OUTPUT_PATH, "val")
+# asalhani: this step generate 6997 files. Takes almost 30 min.
+save_elements(val_elements,OUTPUT_PATH, "val")
 
 # The remaining elements are put into the test folder
 test_elements = []

@@ -1,3 +1,27 @@
+# SS2025 : Setup and Execution Notes
+## Pre-Requesit:
+- Python 3.11.*
+- YOLOv11
+- CUDA
+- Torch
+
+## Running Scripts
+- Install deps. by running following command on the root directory:
+
+    `
+        pip install .
+    `
+- Download and unzip dataset from ASDF repo. and place them in `./datasets-downloaded` folder.
+- To generate RGBD Pose training data, run the script `./Helper_scripts/bproc_to_rgbd-yolo_pose.py)`.
+  
+  The script is going to generate both training data `./datasets/rgbd_pose/NanoVise/train` and validation data `./datasets/rgbd_pose/NanoVise/val`.
+  ### note
+  Note that this script is going to generate the images and lables to be used later in YOLO training. So it will take arround 30 mins to execute. 
+
+- Ensure that following folder has been created `./datasets/rgbd_pose/NanoVise/*`
+- 
+
+
 # ASDF: Assembly State Detection Utilizing Late Fusion by Integrating 6D Pose Estimation
 
 Hannah Schieber*, Shiyu Li†, Niklas Corell‡, Philipp Beckerle+, Julian Kreimeier¶, and Daniel Roth∥
