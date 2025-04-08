@@ -236,8 +236,8 @@ for elem_idx in random_training_elements_indices:
 indices = [i for i in indices if i not in random_training_elements_indices]
 
 # Save train elements
-# asalhani: this step generate 6997 files. Takes almost 30 min.
-save_elements(train_elements, OUTPUT_PATH, "train")
+    # asalhani: this step generate 6997 files. Takes almost 30 min.
+    save_elements(train_elements, OUTPUT_PATH, "train")
 
 # Get random indexes from the remaining files
 random_val_elements_indices = random.sample(indices, num_validation_elements)

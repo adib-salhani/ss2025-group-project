@@ -6,3 +6,4 @@ ultralytics/**
 
 datasets-downloaded/**
 /datasets-downloaded
+/datasets/rgbd_pose/**
