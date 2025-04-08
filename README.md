@@ -12,6 +12,9 @@
         pip install .
     `
 - Download and unzip dataset from ASDF repo. and place them in `./datasets-downloaded` folder.
+
+https://olymp.mixality.de/?launchApp=SYNO.SDS.Drive.Application#file_id=877954175831421891
+
 - To generate RGBD Pose training data, run the script `./Helper_scripts/bproc_to_rgbd-yolo_pose.py)`.
   
   The script is going to generate both training data `./datasets/rgbd_pose/NanoVise/train` and validation data `./datasets/rgbd_pose/NanoVise/val`.
